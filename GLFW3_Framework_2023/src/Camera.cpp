@@ -1,16 +1,11 @@
 #include "Camera.h"
 
-#include <iostream>
-
-//const float Camera::DEGS_TO_RADS = 3.141592654f / 180.0f;
-//const float Camera::RADS_TO_DEGS = 180.0f / 3.141592654f;
-
 // Constructor
-Camera::Camera(vec3 initialLocation, vec3 initialRotation, GLint windowWidth, GLint windowHeight)
+Camera::Camera(vec3 initialLocation, const vec3 initialRotationDegs, const GLint windowWidth, const GLint windowHeight)
 {
 	// Set position, rotation and speed values to zero
 	position = initialLocation;
-	rotation = initialRotation;
+	rotation = initialRotationDegs;
 	speed    = vec3(0.0f);
 
 	// How fast we move (higher values mean we move and strafe faster)
@@ -138,22 +133,13 @@ void Camera::move(double deltaTime)
 	// Vector to break up our movement into components along the X, Y and Z axis
 	vec3 movement(0.0f, 0.0f, 0.0f);
 
-	//vec3 normalisedRotation = glm::normalize(rotation);
-	//std::cout << "Normalised rotation: " << glm::to_string(normalisedRotation) << std::endl;
-
-
-
 	// Get the sine and cosine of our x and y axis rotation (specified in radians)
 	float sinXRot = sin(rotation.x * DEGS_TO_RADS);
 	float cosXRot = cos(rotation.x * DEGS_TO_RADS);
 
 	float sinYRot = sin(rotation.y * DEGS_TO_RADS);
 	float cosYRot = cos(rotation.y * DEGS_TO_RADS);
-
-	// WE DON'T NEED THIS - THIS IS ROLL!
-	//float sinZRot = sin(rotation.z * DEGS_TO_RADS);
-	//float cosZRot = cos(rotation.z * DEGS_TO_RADS);
-
+		
     // This cancels out moving on the Z axis when we're looking up or down
 	float pitchLimitFactor = cosXRot;
 
@@ -167,20 +153,6 @@ void Camera::move(double deltaTime)
 	// TODO: Pure world-space ascend/descend only... would be better to take the camera rotation into account.
 	if (holdingAscend)  { movement += vec3(0.0f, 1.0f, 0.0f); }
 	if (holdingDescend) { movement -= vec3(0.0f, 1.0f, 0.0f); }
-
-
-	// TODO: I don't fucking know.... this is doing my head in......
-	//if (holdingAscend)  { movement += vec3(0.0f, cosXRot, sinYRot + sinXRot); }
-	//if (holdingDescend) { movement -= vec3(0.0f, cosXRot, sinYRot + sinXRot); }
-
-	//std::cout << "------" << std::endl;
-	//std::cout << "cosXRot: " << cosXRot << ", sinXRot: " << sinXRot << std::endl;
-	//std::cout << "cosYRot: " << cosYRot << ", sinYRot: " << sinYRot << std::endl;
-
-	//if (holdingAscend)  { movement += vec3(0.0f, cosXRot, -cosXRot + cosYRot); }
-	//if (holdingDescend) { movement -= vec3(0.0f, cosXRot, -cosXRot + cosYRot); }
-
-
 
 	// Normalise our movement vector, but ONLY if it's non-zero! Normalising a vector of zero length
 	// leads to the new vector having a length of NaN (Not a Number) because of the divide by zero.

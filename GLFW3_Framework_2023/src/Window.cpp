@@ -49,7 +49,7 @@ Window::Window(GLsizei width, GLsizei height, string windowTitle, bool checkDemo
     camera = new Camera(vec3(0.0f), vec3(0.0f), windowWidth, windowHeight);
 
     // Translate to our camera position
-    viewMatrix = glm::translate(viewMatrix, -camera->getLocation());
+    viewMatrix = glm::translate(viewMatrix, -camera->getPosition());
 
     // ----- Initialise GLFW, specify window hints & open a context -----
 
@@ -226,10 +226,10 @@ void Window::moveCamera(double deltaTimeSecs)
     viewMatrix = glm::rotate(viewMatrix, camera->getYRotationRads(), Utils::Y_AXIS);
 
     // Translate to our camera position
-    viewMatrix = glm::translate(viewMatrix, -camera->getLocation());    
+    viewMatrix = glm::translate(viewMatrix, -camera->getPosition());    
 }
 
-void Window::setCameraLocation(vec3 location) { camera->setLocation(location); }
+void Window::setCameraLocation(vec3 location) { camera->setPosition(location); }
 
 void Window::setCameraRotationEuler(vec3 rotationDegs) { camera->setRotationDegs(rotationDegs); }
 
