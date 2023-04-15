@@ -34,7 +34,7 @@ int main()
     srand(static_cast<unsigned>(time(nullptr)));
 
     // Instantiate our window. Params: width, height, window title
-    const string windowTitle = "r3d GLFW3 Basecode | Use left/right cursor to change demo scenes, WSAD to move, and RMB + mouse to look in 3D scenes.";
+    const string windowTitle = "ACL GLFW3 Basecode | Use left/right cursor to change demo scenes, WSAD to move, and RMB + mouse to look in 3D scenes.";
     window = new Window(1280, 720, windowTitle, showDemoScenes);
 
     // Load OpenGL extensions. NOTE: This must be called after we create our window and have a valid OpenGL context.
