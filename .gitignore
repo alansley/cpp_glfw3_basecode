@@ -15,20 +15,20 @@ x64/
 *.gch
 *.pch
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# Compiled Dynamic libraries - NO! We want libraries included!
+#*.so
+#*.dylib
+#*.dll
 
 # Fortran module files
 *.mod
 *.smod
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# Compiled Static libraries - NO! We want static libs included!
+#*.lai
+#*.la
+#*.a
+#*.lib
 
 # Executables
 *.exe
