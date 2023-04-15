@@ -15,10 +15,9 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb/stb_image.h"
 
-// Example scenes kept separate from main to keep it clean
+// Example scenes are kept separate to keep main clean
 #include "demo_scenes/OpenGLDemoScene.hpp"
 #include "demo_scenes/ImGuiDemoScene.hpp"
-
 
 // Our demo scene controlling variables are declared extern in the `DemoSceneGlobals` header so we can access them from multiple classes easily
 #include "demo_scenes/DemoSceneGlobals.h"
@@ -32,22 +31,22 @@ Window *window;
 int main()
 {
     // Seed the random number generator with the current time
-    srand((unsigned)time(NULL));
+    srand(static_cast<unsigned>(time(nullptr)));
 
     // Instantiate our window. Params: width, height, window title
-    string windowTitle = "r3d GLFW3 Basecode | Use left/right cursor to change demo scenes, WSAD to move, and RMB + mouse to look in 3D scenes.";
+    const string windowTitle = "r3d GLFW3 Basecode | Use left/right cursor to change demo scenes, WSAD to move, and RMB + mouse to look in 3D scenes.";
     window = new Window(1280, 720, windowTitle, showDemoScenes);
 
     // Load OpenGL extensions. NOTE: This must be called after we create our window and have a valid OpenGL context.
-    int gladLoaded = gladLoadGL();
+    const int gladLoaded = gladLoadGL();
     if (!gladLoaded)
     {
         cout << "GLAD failed to load OpenGL extensions!" << endl;
         return 1;
     }    
 
-    // Move the camera back a little. Note: The negative Z-Axis runs INTO the screen, the positive Z-Axis runs OUT FROM the screen.
-    window->setCameraLocation(vec3(0.0, 0.0, 50.0));
+    // Move the camera back a little. Note: The negative Z-Axis runs INTO the screen so the positive Z-Axis runs OUT FROM the screen (unlike Unity etc.)
+    Window::setCameraLocation(vec3(0.0, 0.0, 50.0));
     
     // Create objects for our demo scenes if we should
     OpenGLDemoScene* openGLDemoScene = nullptr;
@@ -61,7 +60,8 @@ int main()
 
     // ----- Main game-loop -----
     double currentTime;
-    while (!glfwWindowShouldClose(Window::getGlfwWindow()))
+    bool exitMainLoop = false;
+    while (!glfwWindowShouldClose(Window::getGlfwWindow()) && !exitMainLoop)
     {
         // Get frame details and input
         currentTime = glfwGetTime();
@@ -84,7 +84,8 @@ int main()
                 ImGuiDemoScene::draw();
                 break;
             default:
-                /* Do nothing */
+                cout << "Asked to draw demo scenes but no matching scene found - aborting!" << endl;
+                exitMainLoop = true; // Note: We exit the main loop rather than just calling `exit` so that we tear-down & free our resources
                 break;
             }
         }
@@ -114,16 +115,3 @@ int main()
     delete window;
     return 0;
 }
-
-/*
-class Main
-{
-public:
-    static void nextDemo() { currentDemoScene = ++currentDemoScene % demoSceneCount; }
-
-    static void previousDemo()
-    {
-        if (currentDemoScene > 0) { currentDemoScene = --currentDemoScene % demoSceneCount; }
-    }
-};
-*/
