@@ -1,9 +1,9 @@
 # cpp_glfw3_basecode
-C++ GLFW3 Basecode with GLAD, GLM, STB, and DearIMGUI pre-integrated for rapid OpenGL experimentation.
+Cross-platform C++ GLFW3 Basecode with GLAD, GLM, STB, and DearIMGUI pre-integrated for rapid OpenGL experimentation.
 
-This project is currently configured to build in Visual Studio 2022 Community Edition on the Windows platform using a 64-bit / X64 architecture.
+This project comes configured to build in Visual Studio 2022 on the Windows platform and via a Code::Blocks project on Linux.
 
-This project is provided under a MIT license (see the top-level LICENSE file), however the integrated libraries may have their own licenses - see the `libs` folder and its contained library subfolders for further details.
+This project is provided under a MIT license (see the top-level LICENSE file), however the integrated libraries have their own licenses - see the `cpp_glfw3_basecode/libs` folder and its contained library subfolders for further details.
 
 TODO:
 - Run a clean-up sweep through every file in the codebase,
