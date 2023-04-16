@@ -18,12 +18,12 @@ class OpenGLDemoScene
 {
 private:
     // Properties used to draw a 3D model
-    ShaderProgram* modelShaderProgram;
+    ShaderProgram *modelShaderProgram;
     GLuint modelVaoId, modelVertexBufferId, modelNormalBufferId;
     mat4 modelMVP;
     mat4 modelMMatrix = mat4(1.0f);
     mat3 normalMatrix;
-    Model* model;
+    Model *model;
     vec3 modelRotationSpeed;
 
     // Elements required to load and draw a textured quad
@@ -70,30 +70,23 @@ private:
         glGenVertexArrays(1, &modelVaoId);
         glBindVertexArray(modelVaoId);
 
-        // Generate a vertex buffer, fill it, and specify attributes
-        glGenBuffers(1, &modelVertexBufferId);
-        glBindBuffer(GL_ARRAY_BUFFER, modelVertexBufferId);
-        glBufferData(GL_ARRAY_BUFFER, model->getVertexDataSizeBytes(), model->getVertexData(), GL_STATIC_DRAW);
+	        // Generate a vertex position buffer, fill it, specify attributes and unbind
+	        glGenBuffers(1, &modelVertexBufferId);
+	        glBindBuffer(GL_ARRAY_BUFFER, modelVertexBufferId);
+	        glBufferData(GL_ARRAY_BUFFER, model->getVertexDataSizeBytes(), model->getVertexData(), GL_STATIC_DRAW);
+	        // Args: attribute location, num components, component data type, normalised?, stride, offset
+	        glVertexAttribPointer(modelShaderProgram->attribute("vertexPosition"), VERTEX_COMPONENTS, GL_FLOAT, false, 0, 0);
+	        glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-        glVertexAttribPointer(modelShaderProgram->attribute("vertexPosition"), // Vertex location attribute index
-            VERTEX_COMPONENTS, // Number of location components per vertex
-            GL_FLOAT, // Data type
-            false, // Normalised?
-            0,  // Stride
-            0); // Offset
+	        // Generate a normal buffer, fill it, specify attributes and unbind
+	        glGenBuffers(1, &modelNormalBufferId);
+	        glBindBuffer(GL_ARRAY_BUFFER, modelNormalBufferId);
+	        glBufferData(GL_ARRAY_BUFFER, model->getNormalDataSizeBytes(), model->getNormalData(), GL_STATIC_DRAW);			
+    		glVertexAttribPointer(modelShaderProgram->attribute("vertexNormal"), VERTEX_COMPONENTS, GL_FLOAT, false, 0, 0);
 
-        // Generate a normal buffer, fill it, and specify attributes
-        glGenBuffers(1, &modelNormalBufferId);
-        glBindBuffer(GL_ARRAY_BUFFER, modelNormalBufferId);
-        glBufferData(GL_ARRAY_BUFFER, model->getNormalDataSizeBytes(), model->getNormalData(), GL_STATIC_DRAW);
-			// Args: attribute location, num components, component data type, normalised?, stride, offset
-			glVertexAttribPointer(modelShaderProgram->attribute("vertexNormal"), VERTEX_COMPONENTS, GL_FLOAT, false, 0, 0);
-        // Unbind VBO
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-        // Enable the vertex attributes
-        glEnableVertexAttribArray(modelShaderProgram->attribute("vertexPosition"));
-        glEnableVertexAttribArray(modelShaderProgram->attribute("vertexNormal"));
+	        // Enable the vertex attributes
+	        glEnableVertexAttribArray(modelShaderProgram->attribute("vertexPosition"));
+	        glEnableVertexAttribArray(modelShaderProgram->attribute("vertexNormal"));
 
         // Unbind our Vertex Array object - all the buffer and attribute settings above will be associated with our VAO!
         glBindVertexArray(0);
@@ -254,17 +247,14 @@ private:
     void drawGUI()
     {
         // Data we'll use in our GUI
-        string fpsString = "FPS: " + std::to_string(Window::getFPS());
+        string fpsString      = "FPS: " + std::to_string(Window::getFPS());
+        string horizFoVString = "Horiz FoV: " + std::to_string(Window::getHorizFoVDegs());
+        string foVModeString  = "FoV Mode: " + Window::getFoVModeString();
 
         auto camera = Window::getCamera();
 
         string camRotDegsString = "Cam Rot (Degs): " + glm::to_string(camera->getRotationDegs());
         string camRotRadsString = "Cam Rot (Rads): " + glm::to_string(camera->getRotationRads());
-
-        string sinXRotRads = "SinXRot: " + std::to_string(sin(camera->getRotationRads().x));
-        string cosXRotRads = "CosXRot: " + std::to_string(cos(camera->getRotationRads().x));
-        string sinYRotRads = "SinYRot: " + std::to_string(sin(camera->getRotationRads().y));
-        string cosYRotRads = "CosYRot: " + std::to_string(cos(camera->getRotationRads().y));
 
         // Start the Dear ImGui frame
         ImGui_ImplOpenGL3_NewFrame();
@@ -273,16 +263,19 @@ private:
 
         // Create a window with the given title & append into it
         ImGui::SetNextWindowPos(ImVec2(20, 20));
-        ImGui::SetNextWindowSize(ImVec2(400, 270));
+        ImGui::SetNextWindowSize(ImVec2(380, 325));
         ImGui::Begin("Details / Settings");
-			ImGui::SeparatorText("Details");
-		        ImGui::Text(fpsString.c_str());
+			ImGui::SeparatorText("Controls");
+				ImGui::Text("Use WSAD(Q/E) to move the camera & hold the RMB");
+                ImGui::Text("and move the mouse to look around. The mouse wheel");
+                ImGui::Text("adjusts FoV while the 'F' key toggles Hor+/Vert-");
+                ImGui::Text("field of view modes.");				
+    		ImGui::SeparatorText("Details");
+				ImGui::Text(fpsString.c_str());
+		        ImGui::Text(horizFoVString.c_str());
+                ImGui::Text(foVModeString.c_str());
 		        ImGui::Text(camRotDegsString.c_str());
 		        ImGui::Text(camRotRadsString.c_str());
-		        //ImGui::Text(sinXRotRads.c_str());
-		        //ImGui::Text(cosXRotRads.c_str());
-		        //ImGui::Text(sinYRotRads.c_str());
-		        //ImGui::Text(cosYRotRads.c_str());
 			ImGui::SeparatorText("Sliders");
 		        ImGui::SliderFloat("X Rot Speed", &modelRotationSpeed.x, -5.0f, 5.0f);
 		        ImGui::SliderFloat("Y Rot Speed", &modelRotationSpeed.y, -5.0f, 5.0f);
@@ -294,6 +287,7 @@ private:
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     }
 
+    // Method to draw the orientation grids
     void drawGrids()
     {
         lowerGrid->draw( Window::getViewProjectionMatrix() );
@@ -305,11 +299,11 @@ public:
     OpenGLDemoScene()
     {
         // Load our cow model & scale it up.
-       // Note: If we use `Model::DRAWING_AS_ELEMENTS` then while the vertex count is decreased the normals are per-FACE rather than per-VERTEX, so it gives
-       // the models a 'faceted' look.
+       // Note: If we use `Model::DRAWING_AS_ELEMENTS` then while the vertex count is decreased the normals are per-FACE rather than per-VERTEX,
+       // so it gives the models a very 'faceted' look.
         model = new Model("models/cow.obj", Model::DRAWING_AS_ARRAYS);
         model->scale(4.0f);
-        modelRotationSpeed = vec3(0.0f, 1.0f, 0.0f);
+        modelRotationSpeed = vec3(0.0f, 0.0f, 0.0f);
 
         // TODO: Surely there has to be a way to do this 'nicely' via some `new float[] { value1, value2 }` stuff - but C++ complains =/
         // Bottom-left

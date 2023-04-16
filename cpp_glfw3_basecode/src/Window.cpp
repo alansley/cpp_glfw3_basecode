@@ -1,11 +1,15 @@
 #include "Window.h"
 
+#include <algorithm>
+
 // Static declarations (without which we get 'unresolved external symbol...' errors).
 GLFWwindow *Window::glfwWindow;
 GLsizei     Window::windowWidth;
 GLsizei     Window::windowHeight;
 float       Window::aspectRatio;
-float       Window::vertFieldOfViewDegs;
+float       Window::horizFieldOfViewDegs;          // We only ever set our field of view via the horizontal FoV value..
+float       Window::calculatedVertFieldOfViewRads; // ..but we need the VERTICAL FoV to generate the projection matrix.
+FoVMode  Window::fovMode;
 float       Window::nearClipDistance;
 float       Window::farClipDistance;
 mat4        Window::projectionMatrix;
@@ -27,19 +31,26 @@ bool        Window::checkDemoChangeKeys;
 // Constructor
 Window::Window(GLsizei width, GLsizei height, string windowTitle, bool checkDemoKeys)
 {
+    // Protect against a zero-sized window
+    //if (width == 0)  { width = 1;  }
+    //if (height == 0) { height = 1; }
+
     checkDemoChangeKeys = checkDemoKeys;
 
     // Window and projection settings
-    windowWidth         = width;
-    windowHeight        = height;
-    aspectRatio         = static_cast<float>(windowWidth) / static_cast<float>(windowHeight);
-    vertFieldOfViewDegs = 45.0f;
-    nearClipDistance    = 1.0f;
-    farClipDistance     = 2000.0f;
+    windowWidth                   = width;
+    windowHeight                  = height;
+    aspectRatio                   = static_cast<float>(windowWidth) / static_cast<float>(windowHeight);
 
-    // Calculate the projection matrix, orthographic projection matrix, and set the view matrix to identity
-    projectionMatrix      = glm::perspective(vertFieldOfViewDegs, aspectRatio, nearClipDistance, farClipDistance);
-    orthoProjectionMatrix = glm::ortho(0.0f, static_cast<float>(windowWidth), static_cast<float>(windowHeight), 0.0f, 0.1f, 100.0f);
+    horizFieldOfViewDegs          = 90.0f;
+    fovMode                       = HorizontalPlus;
+    float halfHorizFoVRads        = horizFieldOfViewDegs * Utils::DEGS_TO_RADS * 0.5f;
+    float heightToWidthRatio      = static_cast<float>(windowHeight) / static_cast<float>(windowWidth);
+    calculatedVertFieldOfViewRads = 2.0f * atan(tan(halfHorizFoVRads) * heightToWidthRatio);
+
+    nearClipDistance              = 1.0f;
+    farClipDistance               = 2000.0f;
+    
     viewMatrix            = mat4(1.0f);
 
     // Misc
@@ -86,6 +97,9 @@ Window::Window(GLsizei width, GLsizei height, string windowTitle, bool checkDemo
     // Make the current OpenGL context active
     glfwMakeContextCurrent(glfwWindow);
 
+    // Calculate the projection matrix & orthographic projection matrix for the current window size
+    resizeWindow(glfwWindow, width, height);
+
     // Setup ImGUI. Note: We can only do this when we have a current OpenGL context.
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
@@ -106,9 +120,6 @@ Window::Window(GLsizei width, GLsizei height, string windowTitle, bool checkDemo
 	fpsReportIntervalSecs = 1.0;
 	fpsReportTimer        = 0.0;	
 	printFpsToConsole     = false;
-
-    vec3 upRight(200, 200, 0);
-    cout << glm::to_string(glm::normalize(upRight)) << endl;
 }
 
 // Destructor
@@ -134,6 +145,7 @@ void Window::initGL(GLFWwindow *window)
     glfwSetKeyCallback(glfwWindow, handleKeypress);
     glfwSetCursorPosCallback(glfwWindow, handleMouseMove);
     glfwSetMouseButtonCallback(glfwWindow, handleMouseButton);
+    glfwSetScrollCallback(glfwWindow, handleMouseWheelScroll);
 
     // ---------- Setup GLFW Options ----------
     glfwSwapInterval(1);                                                       // Swap buffers every frame (i.e. lock to VSync)
@@ -142,19 +154,68 @@ void Window::initGL(GLFWwindow *window)
     glfwSetCursorPos(window, windowWidth / 2.0, windowHeight / 2.0); // Centre the mouse cursor on startup
 }
 
-// Callback function to resize the window and set the viewport to the correct size
+// Callback function to resize the window and set the viewport to the correct size.
+// Note: The projection matrix field of view (FoV) is set using either the `Hor+` or `Vert-` algorithms based on the current setting.
+// See: https://en.wikipedia.org/wiki/Field_of_view_in_video_games
+// Also: https://www.wsgf.org/article/screen-change
 void Window::resizeWindow(GLFWwindow *window, GLsizei newWidth, GLsizei newHeight)
 {
+    // Protect against a zero-sized window
+    if (newWidth  == 0) { newWidth  = 1; }
+    if (newHeight == 0) { newHeight = 1; }
+
+    if (VERBOSE)
+    {
+        cout << "New widow size is: " << newWidth << "x" << newHeight << " (Aspect ratio: " << aspectRatio << ")" << endl;
+    }
+
     // Keep track of the new width and height of the window
     windowWidth  = newWidth;
     windowHeight = newHeight;
 
-    // Recalculate the new aspect ratio
+    // Calculate the new aspect ratio
     aspectRatio = static_cast<float>(windowWidth) / static_cast<float>(windowHeight);
+
+    // Calculate the "Vert-" FoV required to maintain our fixed horizontal field of view
+    float horizFoVRads = horizFieldOfViewDegs * Utils::DEGS_TO_RADS;
+    float vertFoVRads = 2.0f * atan(tan(horizFoVRads / 2.0f) * (float)windowHeight / (float)windowWidth);
+    float vertFoVDegs = vertFoVRads * Utils::RADS_TO_DEGS;
+
+    // If we're using Vert- FoV behaviour then the horizontal FoV remains the same and the vertical FoV decreases as window width increases & vice versa
+    if (fovMode == VerticalMinus)
+    {
+        // Nothing to do - we've calculated the `Vert-` FoV setting above
+
+        if (VERBOSE)
+        {
+            cout << "Vert-: To maintain a horiz FoV of " << horizFieldOfViewDegs << " we must use a vert FoV of: " << vertFoVDegs << " degs" << endl;
+        }        
+    }
+    // If we're using Hor+ FoV behaviour then the vertical FoV remains largely the same while the horiz FoV increases as window width increases & vice versa
+    else if (fovMode == HorizontalPlus)
+    {
+        // Work out the horizontal FoV using our initial vert FoV..
+        float horizFoVRads = 2.0f * atan(tan(calculatedVertFieldOfViewRads/ 2.0f) * aspectRatio);
+        horizFieldOfViewDegs = horizFoVRads * Utils::RADS_TO_DEGS;
+
+        // ..then recalculate the vert FoV (that we need for our glm::perspective method) from that.
+        vertFoVRads = 2.0f * atan(tan(horizFoVRads / 2.0f) * (float)windowHeight / (float)windowWidth);
+        vertFoVDegs = vertFoVRads * Utils::RADS_TO_DEGS;
+
+        if (VERBOSE)
+        {
+            cout << "Hor+: To maintain a vert FoV of " << calculatedVertFieldOfViewRads * Utils::RADS_TO_DEGS << " we must use a horiz FoV of: " << horizFieldOfViewDegs << " degs" << endl;
+        }
+    }
+    else
+    {
+        std::cerr << "Unknown FoV setting: " << fovMode << " - ignoring FoV change!" << endl;
+        return;
+    }
 
     // Recalculate the projection matrix and orthographic projection matrix.
     // Note: The orthographic matrix has (0,0) at the top-left and (width,height) at the bottom-right.
-    projectionMatrix = glm::perspective(vertFieldOfViewDegs, aspectRatio, nearClipDistance, farClipDistance);
+    projectionMatrix = glm::perspective(vertFoVRads, aspectRatio, nearClipDistance, farClipDistance);
     orthoProjectionMatrix = glm::ortho(0.0f, static_cast<float>(windowWidth), static_cast<float>(windowHeight), 0.0f, 0.1f, 100.0f);
 
     // Viewport is the entire window
@@ -165,8 +226,8 @@ void Window::resizeWindow(GLFWwindow *window, GLsizei newWidth, GLsizei newHeigh
 }
 
 // Define the static methods to move to the next & previous demo scenes
-static void nextDemo() { if (currentDemoScene < (demoSceneCount - 1)) { ++currentDemoScene; } }
-static void previousDemo() { if (currentDemoScene > 0) { --currentDemoScene; } }
+static void nextDemo()      { if (currentDemoScene < (demoSceneCount - 1)) { ++currentDemoScene; } }
+static void previousDemo()  { if (currentDemoScene > 0) { --currentDemoScene; } }
 
 // Callback function to handle keypresses
 void Window::handleKeypress(GLFWwindow* window, int key, int scancode, int action, int mods)
@@ -174,8 +235,9 @@ void Window::handleKeypress(GLFWwindow* window, int key, int scancode, int actio
     //if (action == GLFW_PRESS || action == GLFW_REPEAT)
     {
         if      (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)                        { glfwSetWindowShouldClose(window, GL_TRUE); }
-        else if (key == GLFW_KEY_LEFT   && action == GLFW_PRESS && checkDemoChangeKeys) { previousDemo(); }
-        else if (key == GLFW_KEY_RIGHT  && action == GLFW_PRESS && checkDemoChangeKeys) { nextDemo();     }
+        else if (key == GLFW_KEY_LEFT   && action == GLFW_PRESS && checkDemoChangeKeys) { previousDemo();  }
+        else if (key == GLFW_KEY_RIGHT  && action == GLFW_PRESS && checkDemoChangeKeys) { nextDemo();      }
+        else if (key == GLFW_KEY_F      && action == GLFW_PRESS && checkDemoChangeKeys) { toggleFoVMode(); }
         else    camera->handleKeypress(key, action); // Note: GLFW_PRESS/REPEAT/RELEASE of other keys all get passed through to the camera       
     }
 }
@@ -212,6 +274,27 @@ void Window::handleMouseButton(GLFWwindow *window, int button, int action, int m
             rightMouseButtonDown = false;
         }
     }
+}
+
+// Callback function to adjust the horizontal field of view when the mouse wheel is scrolled
+void Window::handleMouseWheelScroll(GLFWwindow *window, double xOffset, double yOffset)
+{
+    // Adjust our horizontal field of view.
+    // Note: Change this to `+=` to reverse the zoom direction. By using `-=` we zoom IN when we 'scroll up' (yOffset will be +1), and
+    // we zoom OUT when we 'scroll down' (yOffset will be -1).
+    // Also: Multiply the yOffset value to increase or decrease the zoom sensitivity.
+    horizFieldOfViewDegs -= yOffset;
+
+    // Clamp to a minimum and maximum horizontal field of view
+    horizFieldOfViewDegs = std::ranges::clamp(horizFieldOfViewDegs, MIN_HORIZONTAL_FOV_DEGS, MAX_HORIZONTAL_FOV_DEGS);
+
+    // Recalculate the vertical FoV (required for glm::perspective)
+    float halfHorizFoVRads = horizFieldOfViewDegs * Utils::DEGS_TO_RADS * 0.5f;
+    float heightToWidthRatio = (float)windowHeight / (float)windowWidth;
+    calculatedVertFieldOfViewRads = 2.0f * atan(tan(halfHorizFoVRads) * heightToWidthRatio);
+
+    // Call resize window which will recalculate the projection matrix for us
+    resizeWindow(glfwWindow, windowWidth, windowHeight);
 }
 
 void Window::moveCamera(double deltaTimeSecs)
@@ -289,7 +372,7 @@ void Window::displayWindowProperties(GLFWwindow *window)
     auto blueBits  = videoMode->blueBits;
 	cout << "RGB buffer bits                : " << redBits << "\t" << greenBits << "\t" << blueBits << std::endl;
 
-    // TODO: Sod this for now - it causes GLFW errors!
+    // TODO: Leaving this for now - it used to work in GLFW2 but causes errors now!
     /*
     int alphaBits = glfwGetWindowAttrib(window, GLFW_ALPHA_BITS);
     int depthBits = glfwGetWindowAttrib(window, GLFW_DEPTH_BITS);

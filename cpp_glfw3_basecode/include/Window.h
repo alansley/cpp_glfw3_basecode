@@ -12,7 +12,7 @@
 // Include GLFW3
 #include "GLFW/glfw3.h"
 
-// Include IMGUI
+// Include ImGui shenanigans
 #include "imgui.h"
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
@@ -25,10 +25,16 @@
 using std::cout;
 using std::endl;
 using std::string;
-
 using glm::vec3;
 using glm::vec4;
 using glm::mat4;
+
+// Enums for whether to use `Hor+` or `Vert-` field of view calculations when resizing the window
+enum FoVMode
+{
+    HorizontalPlus, // Default
+    VerticalMinus
+};
 
 class Window
 {
@@ -43,9 +49,11 @@ private:
     static GLsizei windowWidth;
     static GLsizei windowHeight;
     static float aspectRatio;
-    static float vertFieldOfViewDegs;
+    static FoVMode fovMode;                     // Whether we should use `Hor+` or `Vert-` projection matrix calculations when adjusting the window size
+    static float horizFieldOfViewDegs;          // We adjust this if using a Hor+ FoVMode
+    static float calculatedVertFieldOfViewRads; // We 
     static float nearClipDistance;
-    static float farClipDistance;
+    static float farClipDistance;    
 
     // Matrices
     static mat4 projectionMatrix;      // The projection matrix is used to perform the 3D to 2D conversion i.e. it maps from eye space to clip space.
@@ -59,14 +67,19 @@ private:
     // Camera. Params: location, rotation (degrees), window width, window height.
     static Camera *camera;
 
+    // Place a breakpoint on the implementation of this callback to help track down any glfw issues
     static void glfwErrorCallback(int error, const char* description);
 
+    // ImGui IO handler
     static ImGuiIO imguiIO;
 
     // FPS tracking vars
     static int framesDuringInterval;
     static double deltaTime, frameStartTimeSecs, frameEndTimeSecs, fpsReportIntervalSecs, fpsReportTimer, fps;
     static bool printFpsToConsole;
+
+    static inline const float MIN_HORIZONTAL_FOV_DEGS = 10.0f;
+    static inline const float MAX_HORIZONTAL_FOV_DEGS = 140.0f;
 
 public:
     // Constructor/destructor
@@ -88,6 +101,7 @@ public:
     static void handleDemoChangeKeys(GLFWwindow* window, int key, int scancode, int action, int mods); // Change demos w/ left/right cursor keys
     static void handleMouseMove(GLFWwindow *window, double mouseX, double mouseY);
     static void handleMouseButton(GLFWwindow *window, int button, int action, int mods);
+    static void handleMouseWheelScroll(GLFWwindow* window, double xOffset, double yOffset);
 
     // Camera related methods
     static Camera* getCamera() { return camera; }
@@ -103,9 +117,30 @@ public:
 
     // FPS-tracking related methods
     static void setFrameStartTime(double timeSecs) { frameStartTimeSecs = timeSecs; }
-    static double getDeltaTime() { return deltaTime; }
-    static double getFPS() { return fps; }
-    static void updateFpsDetails();    
+    static double getDeltaTime()                   { return deltaTime;              }
+    static double getFPS()                         { return fps;                    }
+    static void updateFpsDetails();
+
+    // Field of View methods
+    static float getHorizFoVDegs() { return horizFieldOfViewDegs; }
+
+    static void toggleFoVMode()
+    {
+        if (fovMode == HorizontalPlus) { fovMode = VerticalMinus; } else { fovMode = HorizontalPlus; }
+    }
+
+    static string getFoVModeString()
+	{
+        switch (fovMode)
+        {
+        case HorizontalPlus:
+            return "Hor+";
+        case VerticalMinus:
+            return "Vert-";
+        default:
+            return "Unknown!";
+        }
+    }
 };
 
 #endif // WINDOW_H
