@@ -265,13 +265,10 @@ private:
         string camRotDegsString = "Cam Rot (Degs): " + glm::to_string(camera->getRotationDegs());
         string camRotRadsString = "Cam Rot (Rads): " + glm::to_string(camera->getRotationRads());
 
-
         string sinXRotRads = "SinXRot: " + std::to_string(sin(camera->getRotationRads().x));
         string cosXRotRads = "CosXRot: " + std::to_string(cos(camera->getRotationRads().x));
         string sinYRotRads = "SinYRot: " + std::to_string(sin(camera->getRotationRads().y));
         string cosYRotRads = "CosYRot: " + std::to_string(cos(camera->getRotationRads().y));
-
-        //auto camRot = Camera::getR
 
         // Start the Dear ImGui frame
         ImGui_ImplOpenGL3_NewFrame();
@@ -373,29 +370,6 @@ public:
         drawTexturedQuad();
         drawGUI();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 };
 
