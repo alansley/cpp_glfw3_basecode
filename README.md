@@ -8,7 +8,8 @@ Cross-platform C++ GLFW3 Basecode with [GLAD](https://glad.dav1d.de/), [GLM](htt
 In terms of custom functionality, this basecode also provides:
 - A `Window` class with a mouse/keyboard and window event handlers and a custom 3D camera to look and move around,
 - A `ShaderProgram` class to easily load & combine vertex/fragment shaders as well as tesselation shaders,
-- Simple `Point`, `Line`, `Quad` and `TexturedQuad` classes for basic drawing, as well as a `Grid` class for orientation, and
+- Simple `Point`, `Line`, `Quad` and `TexturedQuad` classes for basic drawing, as well as a `Grid` class for orientation, 
+- Selectable Hor+ and Vert- Field of View (FoV) handling, and
 - A basic WaveFront .OBJ 3D model loader.
 
 If you make any neat demo scenes or adjustments and would like to see them included please feel free to raise a [pull request](https://github.com/alansley/cpp_glfw3_basecode/pulls), or if you have any problems with the code you're welcome to raise an [issue](https://github.com/alansley/cpp_glfw3_basecode/issues).
@@ -28,7 +29,11 @@ This project is provided under a MIT license (see the top-level LICENSE file), h
 
 ## TODO:
 - Run a clean-up sweep through every file in the codebase fixing up any warnings and applying linting/best-practice where appropriate,
+- Modify Point/Line/Quad/TexturedQuad classes to provide both 2D and 3D versions,
 - Create a YouTube video demonstration and link it in this readme,
-- Create additional demo scenes with further functionality (i.e., use the tessalation shaders, scissor testing, geometry shaders, bump mapping, displacement mapping, stochastic sampling etc.),
-- Integrate a better 3D model loader rather than the simple .OBJ file loader I wrote,
-- Create a Code::Blocks project for Windows.
+- Create additional demo scenes with further functionality (i.e., screen-space effect shaders, use the tessalation shaders, scissor testing, geometry shaders, bump / displacement mapping, stochastic sampling etc.),
+- Integrate a better 3D model loader rather than the simple .OBJ file loader I wrote, and
+- Create a Code::Blocks project for Windows (the Linux one now exists, but there's no harm in adding a Windows version for those who want something lighter than VS2022).
+
+## MAYBE:
+- Add a Light struct and adjust the ambient/diffuse/specular shaders to use it so you can pass in an array of lights?
