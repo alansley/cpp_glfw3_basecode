@@ -182,7 +182,7 @@ bool Model::readModelFile(string filename)
 
 	if (!file.good() )
 	{
-		cout << "Failed to open model file: " << filename << endl;
+		std::cerr << "Failed to open model file: " << filename << endl;
 		exit(-1);
 	}
 

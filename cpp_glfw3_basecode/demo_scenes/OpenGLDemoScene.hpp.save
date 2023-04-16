@@ -14,7 +14,6 @@
 #include "Model.h"
 #include "Window.h"
 
-
 class OpenGLDemoScene
 {
 private:
@@ -30,7 +29,7 @@ private:
     // Elements required to load and draw a textured quad
     ShaderProgram* texQuadShaderProgram;
     GLuint texQuadVaoId, texQuadVertexBufferId, textureID1, textureID2;
-    GLint texture1SamplerID, texture2SamplerID;	// Note: If you want to use separate sampling units for each texture 
+    GLint texture1SamplerID, texture2SamplerID;	// Note: If you want to use separate sampling units for each texture
     float quadSize = 50.0f;
     float texQuadVertices[20]; // 3 vertex positions + 2 texture coordinates = 5 floats. 4 verts per quad = 20 floats in total.
 
@@ -41,7 +40,7 @@ private:
     Grid* lowerGrid = new Grid(500.0f, 500.0f, -50.0f, 20);
 
     // ----- Methods -----
-    
+
     // Setup the shader program to draw a 3D model
     void setupModelShaderProgram(Model* model)
     {
@@ -272,7 +271,6 @@ private:
         string sinYRotRads = "SinYRot: " + std::to_string(sin(camera->getRotationRads().y));
         string cosYRotRads = "CosYRot: " + std::to_string(cos(camera->getRotationRads().y));
 
-
         //auto camRot = Camera::getR
 
         // Start the Dear ImGui frame
@@ -303,7 +301,7 @@ private:
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
     }
 
-    void drawGrids()
+    static void drawGrids()
     {
         lowerGrid->draw( Window::getViewProjectionMatrix() );
         upperGrid->draw( Window::getViewProjectionMatrix() );
@@ -368,7 +366,7 @@ public:
     }
 
     // Method to draw all the elements of our OpenGL demo scene
-    void draw()
+    static void draw()
     {
         drawGrids();
         drawModel();
@@ -398,7 +396,7 @@ public:
 
 
 
-   
+
 };
-	
+
 #endif // OPENGL_DEMO_SCENE_HPP

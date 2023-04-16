@@ -22,7 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{d558f2e7-c3d6-46b1-8b0a-159a23143f84}</ProjectGuid>
-    <RootNamespace>GLFW3Framework2023</RootNamespace>
+    <RootNamespace>cpp_glfw3_basecode</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -120,9 +120,9 @@
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy.exe /D /E /Y "$(ProjectDir)models" "$(TargetDir)models\"
-xcopy.exe /D /E /Y "$(ProjectDir)shaders" "$(TargetDir)shaders\"
-xcopy.exe /D /Y "$(ProjectDir)libs\GLFW3\lib-vc2022\glfw3.dll" "$(TargetDir)"</Command>
+      <Command>xcopy.exe /D /E /Y "$(ProjectDir)..\cpp_glf3_basecode\models" "$(TargetDir)models\"
+xcopy.exe /D /E /Y "$(ProjectDir)..\cpp_glfw3_basecode\shaders" "$(TargetDir)shaders\"
+xcopy.exe /D /Y "$(ProjectDir)..\cpp_glfw3_basecode\libs\windows\GLFW3\lib-vc2022\glfw3.dll" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -1,16 +1,7 @@
-#ifndef line_H
-#define line_H
-
-//#define GLEW_STATIC
-//#include <GL/glew.h>
-/*
-#ifndef __glad_h_
-    #include <glad/glad.h>
-#endif
-*/
+#ifndef LINE_H
+#define LINE_H
 
 // Include the GL Mathematics library
-#define GLM_FORCE_RADIANS
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp> // Needed for the perspective() method
 #include <glm/gtc/type_ptr.hpp>         // Needed for the value_ptr() method
@@ -92,4 +83,4 @@ class Line
         void draw(mat4 mvpMatrix);
 };
 
-#endif // line_H
+#endif // LINE_H

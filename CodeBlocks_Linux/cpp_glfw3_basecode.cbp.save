@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="cpp_glfw3_basecode" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/cpp_glfw3_basecode" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/cpp_glfw3_basecode" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="../cpp_glfw3_basecode/include" />
+			<Add directory="../cpp_glfw3_basecode/libs" />
+			<Add directory="../cpp_glfw3_basecode/libs/imgui" />
+			<Add directory="../cpp_glfw3_basecode/libs/GLAD/include" />
+			<Add directory="../cpp_glfw3_basecode/libs/linux" />
+		</Compiler>
+		<Linker>
+			<Add library="GL" />
+			<Add library="X11" />
+			<Add library="glfw" />
+		</Linker>
+		<ExtraCommands>
+			<Add after="cp -v -u -r $(PROJECT_DIR)/../cpp_glfw3_basecode/models $(TARGET_OUTPUT_DIR)" />
+			<Add after="cp -v -u -r $(PROJECT_DIR)/../cpp_glfw3_basecode/shaders $(TARGET_OUTPUT_DIR)" />
+			<Add after="cp -v -u -r $(PROJECT_DIR)/../cpp_glfw3_basecode/textures $(TARGET_OUTPUT_DIR)" />
+		</ExtraCommands>
+		<Unit filename="../cpp_glfw3_basecode/Main.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/demo_scenes/DemoSceneGlobals.h" />
+		<Unit filename="../cpp_glfw3_basecode/demo_scenes/ImGuiDemoScene.hpp" />
+		<Unit filename="../cpp_glfw3_basecode/demo_scenes/OpenGLDemoScene.hpp" />
+		<Unit filename="../cpp_glfw3_basecode/include/Camera.h" />
+		<Unit filename="../cpp_glfw3_basecode/include/Grid.h" />
+		<Unit filename="../cpp_glfw3_basecode/include/Line.h" />
+		<Unit filename="../cpp_glfw3_basecode/include/Model.h" />
+		<Unit filename="../cpp_glfw3_basecode/include/Point.h" />
+		<Unit filename="../cpp_glfw3_basecode/include/ShaderProgram.hpp" />
+		<Unit filename="../cpp_glfw3_basecode/include/Utils.hpp" />
+		<Unit filename="../cpp_glfw3_basecode/include/Window.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/GLAD/include/glad/glad.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/GLAD/src/glad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_glfw.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_glfw.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_opengl3.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_opengl3.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_opengl3_loader.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imconfig.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_demo.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_draw.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_internal.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_tables.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_widgets.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imstb_rectpack.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imstb_textedit.h" />
+		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imstb_truetype.h" />
+		<Unit filename="../cpp_glfw3_basecode/src/Camera.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/src/Grid.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/src/Line.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/src/Model.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/src/Point.cpp" />
+		<Unit filename="../cpp_glfw3_basecode/src/Window.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>

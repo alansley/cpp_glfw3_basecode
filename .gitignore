@@ -1,15 +1,19 @@
-# Ignore the .vs and x64 build directories
-.vs/
-x64/
+# Ignore Visual Studio 2022 ".vs" & build folders
+VisualStudio2022_Windows/.vs
+VisualStudio2022_Windows/x64
+
+# Ignore Code::Blocks build folders
+CodeBlocks_Linux/bin
+CodeBlocks_Linux/obj
 
 # Prerequisites
 *.d
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Compiled Object files - NO! We'll never have these because we exclude the build dirs, and ignoring .obj means we don't get our 3D models as they're in WaveFront .OBJ format!
+#*.slo
+#*.lo
+#*.o
+#*.obj
 
 # Precompiled Headers
 *.gch

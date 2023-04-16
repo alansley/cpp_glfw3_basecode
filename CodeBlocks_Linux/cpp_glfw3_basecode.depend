@@ -1,0 +1,1274 @@
+# depslib dependency file v1.0
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/src/Camera.cpp
+	"Camera.h"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/include/Camera.h
+	"GLFW/glfw3.h"
+	"glm/glm.hpp"
+	"glm/gtx/string_cast.hpp"
+	<glm/ext/scalar_constants.hpp>
+
+1681601686 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/src/Model.cpp
+	"Model.h"
+
+1681602444 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/include/Model.h
+	<iostream>
+	<string>
+	<sstream>
+	<fstream>
+	<vector>
+	<iterator>
+	<algorithm>
+	<cstring>
+	<glad/glad.h>
+	"glm/glm.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/GLAD/include/glad/glad.h
+	<KHR/khrplatform.h>
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/GLAD/include/KHR/khrplatform.h
+	<stdint.h>
+	<inttypes.h>
+	<stdint.h>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/glm.hpp
+	"detail/_fixes.hpp"
+	"detail/setup.hpp"
+	<cmath>
+	<climits>
+	<cfloat>
+	<limits>
+	<cassert>
+	"fwd.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"trigonometric.hpp"
+	"exponential.hpp"
+	"common.hpp"
+	"packing.hpp"
+	"geometric.hpp"
+	"matrix.hpp"
+	"vector_relational.hpp"
+	"integer.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/_fixes.hpp
+	<cmath>
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/setup.hpp
+	<cassert>
+	<cstddef>
+	"../simd/platform.h"
+	<CL/sycl.hpp>
+	<limits>
+	<cstdint>
+	<type_traits>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/simd/platform.h
+	<cuda.h>
+	<immintrin.h>
+	<immintrin.h>
+	<popcntintrin.h>
+	<nmmintrin.h>
+	<smmintrin.h>
+	<tmmintrin.h>
+	<pmmintrin.h>
+	<emmintrin.h>
+	"neon.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/simd/neon.h
+	<arm_neon.h>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/fwd.hpp
+	"detail/qualifier.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/qualifier.hpp
+	"setup.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/vec2.hpp
+	"./ext/vector_bool2.hpp"
+	"./ext/vector_bool2_precision.hpp"
+	"./ext/vector_float2.hpp"
+	"./ext/vector_float2_precision.hpp"
+	"./ext/vector_double2.hpp"
+	"./ext/vector_double2_precision.hpp"
+	"./ext/vector_int2.hpp"
+	"./ext/vector_int2_sized.hpp"
+	"./ext/vector_uint2.hpp"
+	"./ext/vector_uint2_sized.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_bool2.hpp
+	"../detail/type_vec2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_vec2.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec2.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/_swizzle.hpp
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/_swizzle_func.hpp
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_vec2.inl
+	"./compute_vector_relational.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/compute_vector_relational.hpp
+	"setup.hpp"
+	<limits>
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_bool2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_float2.hpp
+	"../detail/type_vec2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_float2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_double2.hpp
+	"../detail/type_vec2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_double2_precision.hpp
+	"../detail/type_vec2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_int2.hpp
+	"../detail/type_vec2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_int2_sized.hpp
+	"../ext/vector_int2.hpp"
+	"../ext/scalar_int_sized.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/scalar_int_sized.hpp
+	"../detail/setup.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_uint2.hpp
+	"../detail/type_vec2.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_uint2_sized.hpp
+	"../ext/vector_uint2.hpp"
+	"../ext/scalar_uint_sized.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/scalar_uint_sized.hpp
+	"../detail/setup.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/vec3.hpp
+	"./ext/vector_bool3.hpp"
+	"./ext/vector_bool3_precision.hpp"
+	"./ext/vector_float3.hpp"
+	"./ext/vector_float3_precision.hpp"
+	"./ext/vector_double3.hpp"
+	"./ext/vector_double3_precision.hpp"
+	"./ext/vector_int3.hpp"
+	"./ext/vector_int3_sized.hpp"
+	"./ext/vector_uint3.hpp"
+	"./ext/vector_uint3_sized.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_bool3.hpp
+	"../detail/type_vec3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_vec3.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec3.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_vec3.inl
+	"compute_vector_relational.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_bool3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_float3.hpp
+	"../detail/type_vec3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_float3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_double3.hpp
+	"../detail/type_vec3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_double3_precision.hpp
+	"../detail/type_vec3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_int3.hpp
+	"../detail/type_vec3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_int3_sized.hpp
+	"../ext/vector_int3.hpp"
+	"../ext/scalar_int_sized.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_uint3.hpp
+	"../detail/type_vec3.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_uint3_sized.hpp
+	"../ext/vector_uint3.hpp"
+	"../ext/scalar_uint_sized.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/vec4.hpp
+	"./ext/vector_bool4.hpp"
+	"./ext/vector_bool4_precision.hpp"
+	"./ext/vector_float4.hpp"
+	"./ext/vector_float4_precision.hpp"
+	"./ext/vector_double4.hpp"
+	"./ext/vector_double4_precision.hpp"
+	"./ext/vector_int4.hpp"
+	"./ext/vector_int4_sized.hpp"
+	"./ext/vector_uint4.hpp"
+	"./ext/vector_uint4_sized.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_bool4.hpp
+	"../detail/type_vec4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_vec4.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec4.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_vec4.inl
+	"compute_vector_relational.hpp"
+	"type_vec4_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_vec4_simd.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_bool4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_float4.hpp
+	"../detail/type_vec4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_float4_precision.hpp
+	"../detail/type_vec4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_double4.hpp
+	"../detail/type_vec4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_double4_precision.hpp
+	"../detail/setup.hpp"
+	"../detail/type_vec4.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_int4.hpp
+	"../detail/type_vec4.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_int4_sized.hpp
+	"../ext/vector_int4.hpp"
+	"../ext/scalar_int_sized.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_uint4.hpp
+	"../detail/type_vec4.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_uint4_sized.hpp
+	"../ext/vector_uint4.hpp"
+	"../ext/scalar_uint_sized.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/mat2x2.hpp
+	"./ext/matrix_double2x2.hpp"
+	"./ext/matrix_double2x2_precision.hpp"
+	"./ext/matrix_float2x2.hpp"
+	"./ext/matrix_float2x2_precision.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double2x2.hpp
+	"../detail/type_mat2x2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat2x2.hpp
+	"type_vec2.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x2.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat2x2.inl
+	"../matrix.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/matrix.hpp
+	"detail/qualifier.hpp"
+	"detail/setup.hpp"
+	"vec2.hpp"
+	"vec3.hpp"
+	"vec4.hpp"
+	"mat2x2.hpp"
+	"mat2x3.hpp"
+	"mat2x4.hpp"
+	"mat3x2.hpp"
+	"mat3x3.hpp"
+	"mat3x4.hpp"
+	"mat4x2.hpp"
+	"mat4x3.hpp"
+	"mat4x4.hpp"
+	"detail/func_matrix.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/mat2x3.hpp
+	"./ext/matrix_double2x3.hpp"
+	"./ext/matrix_double2x3_precision.hpp"
+	"./ext/matrix_float2x3.hpp"
+	"./ext/matrix_float2x3_precision.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double2x3.hpp
+	"../detail/type_mat2x3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat2x3.hpp
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x3.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat2x3.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double2x3_precision.hpp
+	"../detail/type_mat2x3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float2x3.hpp
+	"../detail/type_mat2x3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float2x3_precision.hpp
+	"../detail/type_mat2x3.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/mat2x4.hpp
+	"./ext/matrix_double2x4.hpp"
+	"./ext/matrix_double2x4_precision.hpp"
+	"./ext/matrix_float2x4.hpp"
+	"./ext/matrix_float2x4_precision.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double2x4.hpp
+	"../detail/type_mat2x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat2x4.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat2x4.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat2x4.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double2x4_precision.hpp
+	"../detail/type_mat2x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float2x4.hpp
+	"../detail/type_mat2x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float2x4_precision.hpp
+	"../detail/type_mat2x4.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/mat3x2.hpp
+	"./ext/matrix_double3x2.hpp"
+	"./ext/matrix_double3x2_precision.hpp"
+	"./ext/matrix_float3x2.hpp"
+	"./ext/matrix_float3x2_precision.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double3x2.hpp
+	"../detail/type_mat3x2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat3x2.hpp
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x2.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat3x2.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double3x2_precision.hpp
+	"../detail/type_mat3x2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float3x2.hpp
+	"../detail/type_mat3x2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float3x2_precision.hpp
+	"../detail/type_mat3x2.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/mat3x3.hpp
+	"./ext/matrix_double3x3.hpp"
+	"./ext/matrix_double3x3_precision.hpp"
+	"./ext/matrix_float3x3.hpp"
+	"./ext/matrix_float3x3_precision.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double3x3.hpp
+	"../detail/type_mat3x3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat3x3.hpp
+	"type_vec3.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x3.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat3x3.inl
+	"../matrix.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double3x3_precision.hpp
+	"../detail/type_mat3x3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float3x3.hpp
+	"../detail/type_mat3x3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float3x3_precision.hpp
+	"../detail/type_mat3x3.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/mat3x4.hpp
+	"./ext/matrix_double3x4.hpp"
+	"./ext/matrix_double3x4_precision.hpp"
+	"./ext/matrix_float3x4.hpp"
+	"./ext/matrix_float3x4_precision.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double3x4.hpp
+	"../detail/type_mat3x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat3x4.hpp
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat3x4.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat3x4.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double3x4_precision.hpp
+	"../detail/type_mat3x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float3x4.hpp
+	"../detail/type_mat3x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float3x4_precision.hpp
+	"../detail/type_mat3x4.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/mat4x2.hpp
+	"./ext/matrix_double4x2.hpp"
+	"./ext/matrix_double4x2_precision.hpp"
+	"./ext/matrix_float4x2.hpp"
+	"./ext/matrix_float4x2_precision.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double4x2.hpp
+	"../detail/type_mat4x2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat4x2.hpp
+	"type_vec2.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x2.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat4x2.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double4x2_precision.hpp
+	"../detail/type_mat4x2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float4x2.hpp
+	"../detail/type_mat4x2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float4x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/mat4x3.hpp
+	"./ext/matrix_double4x3.hpp"
+	"./ext/matrix_double4x3_precision.hpp"
+	"./ext/matrix_float4x3.hpp"
+	"./ext/matrix_float4x3_precision.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double4x3.hpp
+	"../detail/type_mat4x3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat4x3.hpp
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x3.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat4x3.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double4x3_precision.hpp
+	"../detail/type_mat4x3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float4x3.hpp
+	"../detail/type_mat4x3.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float4x3_precision.hpp
+	"../detail/type_mat4x3.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/mat4x4.hpp
+	"./ext/matrix_double4x4.hpp"
+	"./ext/matrix_double4x4_precision.hpp"
+	"./ext/matrix_float4x4.hpp"
+	"./ext/matrix_float4x4_precision.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double4x4.hpp
+	"../detail/type_mat4x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat4x4.hpp
+	"type_vec4.hpp"
+	<limits>
+	<cstddef>
+	"type_mat4x4.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat4x4.inl
+	"../matrix.hpp"
+	"type_mat4x4_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_mat4x4_simd.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double4x4_precision.hpp
+	"../detail/type_mat4x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float4x4.hpp
+	"../detail/type_mat4x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float4x4_precision.hpp
+	"../detail/type_mat4x4.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_matrix.inl
+	"../geometric.hpp"
+	<limits>
+	"func_matrix_simd.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/geometric.hpp
+	"detail/type_vec3.hpp"
+	"detail/func_geometric.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_geometric.inl
+	"../exponential.hpp"
+	"../common.hpp"
+	"func_geometric_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/exponential.hpp
+	"detail/type_vec1.hpp"
+	"detail/type_vec2.hpp"
+	"detail/type_vec3.hpp"
+	"detail/type_vec4.hpp"
+	<cmath>
+	"detail/func_exponential.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_vec1.hpp
+	"qualifier.hpp"
+	"_swizzle.hpp"
+	"_swizzle_func.hpp"
+	<cstddef>
+	"type_vec1.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_vec1.inl
+	"./compute_vector_relational.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_exponential.inl
+	"../vector_relational.hpp"
+	"_vectorize.hpp"
+	<limits>
+	<cmath>
+	<cassert>
+	"func_exponential_simd.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/vector_relational.hpp
+	"detail/qualifier.hpp"
+	"detail/setup.hpp"
+	"detail/func_vector_relational.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_vector_relational.inl
+	"func_vector_relational_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_vector_relational_simd.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/_vectorize.hpp
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_exponential_simd.inl
+	"../simd/exponential.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/simd/exponential.h
+	"platform.h"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/common.hpp
+	"detail/qualifier.hpp"
+	"detail/_fixes.hpp"
+	"detail/func_common.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_common.inl
+	"../vector_relational.hpp"
+	"compute_common.hpp"
+	"type_vec1.hpp"
+	"type_vec2.hpp"
+	"type_vec3.hpp"
+	"type_vec4.hpp"
+	"_vectorize.hpp"
+	<limits>
+	"func_common_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/compute_common.hpp
+	"setup.hpp"
+	<limits>
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_common_simd.inl
+	"../simd/common.h"
+	<immintrin.h>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/simd/common.h
+	"platform.h"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_geometric_simd.inl
+	"../simd/geometric.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/simd/geometric.h
+	"common.h"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_matrix_simd.inl
+	"type_mat4x4.hpp"
+	"../geometric.hpp"
+	"../simd/matrix.h"
+	<cstring>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/simd/matrix.h
+	"geometric.h"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_double2x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float2x2.hpp
+	"../detail/type_mat2x2.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_float2x2_precision.hpp
+	"../detail/type_mat2x2.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/trigonometric.hpp
+	"detail/setup.hpp"
+	"detail/qualifier.hpp"
+	"detail/func_trigonometric.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_trigonometric.inl
+	"_vectorize.hpp"
+	<cmath>
+	<limits>
+	"func_trigonometric_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_trigonometric_simd.inl
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/packing.hpp
+	"./ext/vector_uint2.hpp"
+	"./ext/vector_float2.hpp"
+	"./ext/vector_float4.hpp"
+	"detail/func_packing.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_packing.inl
+	"../common.hpp"
+	"type_half.hpp"
+	"func_packing_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_half.hpp
+	"setup.hpp"
+	"type_half.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_half.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_packing_simd.inl
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/integer.hpp
+	"detail/qualifier.hpp"
+	"common.hpp"
+	"vector_relational.hpp"
+	"detail/func_integer.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_integer.inl
+	"_vectorize.hpp"
+	<intrin.h>
+	<limits>
+	"func_integer_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/func_integer_simd.inl
+	"../simd/integer.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/simd/integer.h
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtx/string_cast.hpp
+	"../glm.hpp"
+	"../gtc/type_precision.hpp"
+	"../gtc/quaternion.hpp"
+	"../gtx/dual_quaternion.hpp"
+	<string>
+	<cmath>
+	"string_cast.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/type_precision.hpp
+	"../gtc/quaternion.hpp"
+	"../gtc/vec1.hpp"
+	"../ext/vector_int1_sized.hpp"
+	"../ext/vector_int2_sized.hpp"
+	"../ext/vector_int3_sized.hpp"
+	"../ext/vector_int4_sized.hpp"
+	"../ext/scalar_int_sized.hpp"
+	"../ext/vector_uint1_sized.hpp"
+	"../ext/vector_uint2_sized.hpp"
+	"../ext/vector_uint3_sized.hpp"
+	"../ext/vector_uint4_sized.hpp"
+	"../ext/scalar_uint_sized.hpp"
+	"../detail/type_vec2.hpp"
+	"../detail/type_vec3.hpp"
+	"../detail/type_vec4.hpp"
+	"../detail/type_mat2x2.hpp"
+	"../detail/type_mat2x3.hpp"
+	"../detail/type_mat2x4.hpp"
+	"../detail/type_mat3x2.hpp"
+	"../detail/type_mat3x3.hpp"
+	"../detail/type_mat3x4.hpp"
+	"../detail/type_mat4x2.hpp"
+	"../detail/type_mat4x3.hpp"
+	"../detail/type_mat4x4.hpp"
+	"type_precision.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/quaternion.hpp
+	"../gtc/constants.hpp"
+	"../gtc/matrix_transform.hpp"
+	"../ext/vector_relational.hpp"
+	"../ext/quaternion_common.hpp"
+	"../ext/quaternion_float.hpp"
+	"../ext/quaternion_float_precision.hpp"
+	"../ext/quaternion_double.hpp"
+	"../ext/quaternion_double_precision.hpp"
+	"../ext/quaternion_relational.hpp"
+	"../ext/quaternion_geometric.hpp"
+	"../ext/quaternion_trigonometric.hpp"
+	"../ext/quaternion_transform.hpp"
+	"../detail/type_mat3x3.hpp"
+	"../detail/type_mat4x4.hpp"
+	"../detail/type_vec3.hpp"
+	"../detail/type_vec4.hpp"
+	"quaternion.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/constants.hpp
+	"../ext/scalar_constants.hpp"
+	"constants.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/scalar_constants.hpp
+	"../detail/setup.hpp"
+	"scalar_constants.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/scalar_constants.inl
+	<limits>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/constants.inl
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/matrix_transform.hpp
+	"../mat4x4.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../ext/matrix_projection.hpp"
+	"../ext/matrix_clip_space.hpp"
+	"../ext/matrix_transform.hpp"
+	"matrix_transform.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_projection.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_projection.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_projection.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_clip_space.hpp
+	"../ext/scalar_constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"matrix_clip_space.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_clip_space.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_transform.hpp
+	"../gtc/constants.hpp"
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+	"matrix_transform.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/matrix_transform.inl
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/matrix_transform.inl
+	"../geometric.hpp"
+	"../trigonometric.hpp"
+	"../matrix.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_relational.hpp
+	"../detail/qualifier.hpp"
+	"vector_relational.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_relational.inl
+	"../vector_relational.hpp"
+	"../common.hpp"
+	"../detail/qualifier.hpp"
+	"../detail/type_float.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_float.hpp
+	"setup.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_common.hpp
+	"../ext/scalar_constants.hpp"
+	"../ext/quaternion_geometric.hpp"
+	"../common.hpp"
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	<limits>
+	"quaternion_common.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_geometric.hpp
+	"../geometric.hpp"
+	"../exponential.hpp"
+	"../ext/vector_relational.hpp"
+	"quaternion_geometric.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_geometric.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_common.inl
+	"quaternion_common_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_common_simd.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_float.hpp
+	"../detail/type_quat.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_quat.hpp
+	"../detail/type_mat3x3.hpp"
+	"../detail/type_mat4x4.hpp"
+	"../detail/type_vec3.hpp"
+	"../detail/type_vec4.hpp"
+	"../ext/vector_relational.hpp"
+	"../ext/quaternion_relational.hpp"
+	"../gtc/constants.hpp"
+	"../gtc/matrix_transform.hpp"
+	"type_quat.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_relational.hpp
+	"../vector_relational.hpp"
+	"quaternion_relational.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_relational.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_quat.inl
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	"../ext/quaternion_geometric.hpp"
+	<limits>
+	"type_quat_simd.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/detail/type_quat_simd.inl
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_float_precision.hpp
+	"../detail/type_quat.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_double.hpp
+	"../detail/type_quat.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_double_precision.hpp
+	"../detail/type_quat.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_trigonometric.hpp
+	"../trigonometric.hpp"
+	"../exponential.hpp"
+	"scalar_constants.hpp"
+	"vector_relational.hpp"
+	<limits>
+	"quaternion_trigonometric.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_trigonometric.inl
+	"scalar_constants.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_transform.hpp
+	"../common.hpp"
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"quaternion_transform.inl"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/quaternion_transform.inl
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/quaternion.inl
+	"../trigonometric.hpp"
+	"../geometric.hpp"
+	"../exponential.hpp"
+	"epsilon.hpp"
+	<limits>
+	"quaternion_simd.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/epsilon.hpp
+	"../detail/setup.hpp"
+	"../detail/qualifier.hpp"
+	"epsilon.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/epsilon.inl
+	"../vector_relational.hpp"
+	"../common.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/quaternion_simd.inl
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/vec1.hpp
+	"../ext/vector_bool1.hpp"
+	"../ext/vector_bool1_precision.hpp"
+	"../ext/vector_float1.hpp"
+	"../ext/vector_float1_precision.hpp"
+	"../ext/vector_double1.hpp"
+	"../ext/vector_double1_precision.hpp"
+	"../ext/vector_int1.hpp"
+	"../ext/vector_int1_sized.hpp"
+	"../ext/vector_uint1.hpp"
+	"../ext/vector_uint1_sized.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_bool1.hpp
+	"../detail/type_vec1.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_bool1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_float1.hpp
+	"../detail/type_vec1.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_float1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_double1.hpp
+	"../detail/type_vec1.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_double1_precision.hpp
+	"../detail/type_vec1.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_int1.hpp
+	"../detail/type_vec1.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_int1_sized.hpp
+	"../ext/vector_int1.hpp"
+	"../ext/scalar_int_sized.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_uint1.hpp
+	"../detail/type_vec1.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/ext/vector_uint1_sized.hpp
+	"../ext/vector_uint1.hpp"
+	"../ext/scalar_uint_sized.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/type_precision.inl
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtx/dual_quaternion.hpp
+	"../glm.hpp"
+	"../gtc/constants.hpp"
+	"../gtc/quaternion.hpp"
+	"dual_quaternion.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtx/dual_quaternion.inl
+	"../geometric.hpp"
+	<limits>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtx/string_cast.inl
+	<cstdarg>
+	<cstdio>
+
+1681606081 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/Main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+	"glad/glad.h"
+	"Window.h"
+	"stb/stb_image.h"
+	"demo_scenes/OpenGLDemoScene.hpp"
+	"demo_scenes/ImGuiDemoScene.hpp"
+	"demo_scenes/DemoSceneGlobals.h"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/include/Window.h
+	<iostream>
+	<stdio.h>
+	"glm/glm.hpp"
+	"glm/gtc/matrix_transform.hpp"
+	"glm/gtx/string_cast.hpp"
+	"GLFW/glfw3.h"
+	"imgui.h"
+	"backends/imgui_impl_glfw.h"
+	"backends/imgui_impl_opengl3.h"
+	"Camera.h"
+	"../demo_scenes/DemoSceneGlobals.h"
+	"Utils.hpp"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imgui.h
+	"imconfig.h"
+	<float.h>
+	<stdarg.h>
+	<stddef.h>
+	<string.h>
+	<assert.h>
+	"imgui_user.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imconfig.h
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_glfw.h
+	"imgui.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_opengl3.h
+	"imgui.h"
+	<TargetConditionals.h>
+
+1681606128 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/demo_scenes/DemoSceneGlobals.h
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/include/Utils.hpp
+	<iostream>
+	<string>
+	<sstream>
+	<cstdlib>
+	"KHR/glext.h"
+	"GLFW/glfw3.h"
+	"glm/glm.hpp"
+	"stb/stb_image.h"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/GLAD/include/KHR/glext.h
+	<windows.h>
+	<KHR/khrplatform.h>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/stb/stb_image.h
+	"stb_image.h"
+	<stdio.h>
+	<stdlib.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<string.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<assert.h>
+	<stdint.h>
+	<emmintrin.h>
+	<intrin.h>
+	<arm_neon.h>
+
+1681605895 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/demo_scenes/OpenGLDemoScene.hpp
+	"glad/glad.h"
+	"glm/gtc/type_ptr.hpp"
+	"glm/gtx/string_cast.hpp"
+	"imgui.h"
+	"backends/imgui_impl_opengl3.h"
+	"ShaderProgram.hpp"
+	"Grid.h"
+	"Model.h"
+	"Window.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/type_ptr.hpp
+	"../gtc/quaternion.hpp"
+	"../gtc/vec1.hpp"
+	"../vec2.hpp"
+	"../vec3.hpp"
+	"../vec4.hpp"
+	"../mat2x2.hpp"
+	"../mat2x3.hpp"
+	"../mat2x4.hpp"
+	"../mat3x2.hpp"
+	"../mat3x3.hpp"
+	"../mat3x4.hpp"
+	"../mat4x2.hpp"
+	"../mat4x3.hpp"
+	"../mat4x4.hpp"
+	<cstring>
+	"type_ptr.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/glm/gtc/type_ptr.inl
+	<cstring>
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/include/ShaderProgram.hpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<map>
+	<list>
+	"glad/glad.h"
+	"Utils.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/include/Grid.h
+	"glm/glm.hpp"
+	"glm/gtc/type_ptr.hpp"
+	"ShaderProgram.hpp"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/demo_scenes/ImGuiDemoScene.hpp
+	"imgui.h"
+	"backends/imgui_impl_opengl3.h"
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/src/Grid.cpp
+	"Grid.h"
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/src/Line.cpp
+	"Line.h"
+
+1681595544 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/include/Line.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	<glm/gtc/type_ptr.hpp>
+	"ShaderProgram.hpp"
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/src/Point.cpp
+	"Point.h"
+
+1681590001 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/include/Point.h
+	"ShaderProgram.hpp"
+	"GLFW/glfw3.h"
+	"glm/glm.hpp"
+	"glm/gtc/matrix_transform.hpp"
+	"glm/gtc/type_ptr.hpp"
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/src/Window.cpp
+	"Window.h"
+
+1681593411 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/linux/GLFW/glfw3.h
+	<stddef.h>
+	<stdint.h>
+	<vulkan/vulkan.h>
+	<GLES/gl.h>
+	<GLES/glext.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl3.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl31.h>
+	<GLES2/gl2ext.h>
+	<GLES3/gl32.h>
+	<GLES2/gl2ext.h>
+	<OpenGL/gl3.h>
+	<OpenGL/gl3ext.h>
+	<GL/glcorearb.h>
+	<GL/glext.h>
+	<OpenGL/glu.h>
+	<GL/glu.h>
+	<OpenGL/gl.h>
+	<GL/gl.h>
+	<GL/glext.h>
+
+1681590001 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/GLAD/src/glad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<glad/glad.h>
+	<windows.h>
+	<winapifamily.h>
+	<dlfcn.h>
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_glfw.cpp
+	"imgui.h"
+	"imgui_impl_glfw.h"
+	<GLFW/glfw3.h>
+	<GLFW/glfw3native.h>
+	<GLFW/glfw3native.h>
+	<emscripten.h>
+	<emscripten/html5.h>
+
+1681593416 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/linux/GLFW/glfw3native.h
+	<windows.h>
+	<ApplicationServices/ApplicationServices.h>
+	<objc/objc.h>
+	<X11/Xlib.h>
+	<X11/extensions/Xrandr.h>
+	<wayland-client.h>
+	<GL/glx.h>
+	<EGL/egl.h>
+	<GL/osmesa.h>
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_opengl3.cpp
+	"imgui.h"
+	"imgui_impl_opengl3.h"
+	<stdio.h>
+	<stddef.h>
+	<stdint.h>
+	<TargetConditionals.h>
+	<OpenGLES/ES2/gl.h>
+	<GLES2/gl2.h>
+	<GLES2/gl2ext.h>
+	<OpenGLES/ES3/gl.h>
+	<GLES3/gl3.h>
+	"imgui_impl_opengl3_loader.h"
+	<stdio.h>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_opengl3_loader.h
+	<stdint.h>
+	<windows.h>
+	<stdlib.h>
+	<windows.h>
+	<dlfcn.h>
+	<dlfcn.h>
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imgui.cpp
+	"imgui.h"
+	"imgui_internal.h"
+	<stdio.h>
+	<stddef.h>
+	<stdint.h>
+	<Windows.h>
+	<windows.h>
+	<TargetConditionals.h>
+	"stb_sprintf.h"
+	<Carbon/Carbon.h>
+	<imm.h>
+	"imgui_user.inl"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imgui_internal.h
+	"imgui_internal.h"
+	"imgui.h"
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	<limits.h>
+	<immintrin.h>
+	"imstb_textedit.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imstb_textedit.h
+	<string.h>
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imgui_demo.cpp
+	"imgui.h"
+	<ctype.h>
+	<limits.h>
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdint.h>
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imgui_draw.cpp
+	"imgui.h"
+	"imgui_internal.h"
+	"misc/freetype/imgui_freetype.h"
+	<stdio.h>
+	"imstb_rectpack.h"
+	"imstb_truetype.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/misc/freetype/imgui_freetype.h
+	"imgui.h"
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imstb_rectpack.h
+	<stdlib.h>
+	<assert.h>
+
+1681590002 /mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imstb_truetype.h
+	"stb_truetype.h"
+	<stdio.h>
+	"stb_truetype.h"
+	<math.h>
+	<math.h>
+	<math.h>
+	<math.h>
+	<math.h>
+	<stdlib.h>
+	<assert.h>
+	<string.h>
+	<string.h>
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imgui_tables.cpp
+	"imgui.h"
+	"imgui_internal.h"
+	<stddef.h>
+	<stdint.h>
+
+1681590002 source:/mnt/SharedData/Code/GLFW_Basecode_Git/cpp_glfw3_basecode/cpp_glfw3_basecode/libs/imgui/imgui_widgets.cpp
+	"imgui.h"
+	"imgui_internal.h"
+	<stddef.h>
+	<stdint.h>
+	"imstb_textedit.h"
+

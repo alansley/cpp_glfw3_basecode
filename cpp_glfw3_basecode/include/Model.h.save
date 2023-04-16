@@ -40,7 +40,6 @@ Purpose: .OBJ format model loader. Handles vertices, normals, normal indices and
 #include <algorithm>
 #include <cstring>
 
-
 #ifndef __glad_h_
     #include <glad/glad.h>
 #endif
@@ -134,11 +133,12 @@ class Model
 
     private:
         // Pointers to vectors of vec3's to store the data read from the model file
-        vector<vec3> *vertices;
-        vector<vec3> *normals;
-        vector<vec3> *normalIndices;
-        vector<vec3> *texCoords;
-        vector<vec3> *faces;
+        // Note: If we don't assign these to nullptr as we declare them then when attempting to load a model they aren't 0, so we try to free them in Model::init
+        vector<vec3> *vertices      = nullptr;
+        vector<vec3> *normals       = nullptr;
+        vector<vec3> *normalIndices = nullptr;
+        vector<vec3> *texCoords     = nullptr;
+        vector<vec3> *faces         = nullptr;
 
         // Pointers to arrays of floats to store expanded data made up from the vertices and faces
         GLfloat *vertexData;
