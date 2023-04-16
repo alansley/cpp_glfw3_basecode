@@ -8,7 +8,8 @@ Cross-platform C++ GLFW3 Basecode with [GLAD](https://glad.dav1d.de/), [GLM](htt
 In terms of custom functionality, this basecode also provides:
 - A `Window` class with a mouse/keyboard and window event handlers and a custom 3D camera to look and move around,
 - A `ShaderProgram` class to easily load & combine vertex/fragment shaders as well as tesselation shaders,
-- Simple `Point`, `Line`, `Quad` and `TexturedQuad` classes for basic drawing, as well as a `Grid` class for orientation, and
+- Simple `Point`, `Line`, `Quad` and `TexturedQuad` classes for basic drawing, as well as a `Grid` class for orientation, 
+- Selectable Hor+ and Vert- Field of View (FoV) handling, and
 - A basic WaveFront .OBJ 3D model loader.
 
 If you make any neat demo scenes or adjustments and would like to see them included please feel free to raise a [pull request](https://github.com/alansley/cpp_glfw3_basecode/pulls), or if you have any problems with the code you're welcome to raise an [issue](https://github.com/alansley/cpp_glfw3_basecode/issues).
