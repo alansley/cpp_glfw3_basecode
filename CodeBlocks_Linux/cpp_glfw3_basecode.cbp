@@ -30,16 +30,17 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="../libs" />
+			<Add directory="../libs/GLAD/include" />
+			<Add directory="../libs/imgui" />
+			<Add directory="../libs/linux" />
 			<Add directory="../cpp_glfw3_basecode/include" />
-			<Add directory="../cpp_glfw3_basecode/libs" />
-			<Add directory="../cpp_glfw3_basecode/libs/imgui" />
-			<Add directory="../cpp_glfw3_basecode/libs/GLAD/include" />
-			<Add directory="../cpp_glfw3_basecode/libs/linux" />
 		</Compiler>
 		<Linker>
 			<Add library="GL" />
 			<Add library="X11" />
 			<Add library="glfw" />
+			<Add directory="../libs/linux/GLFW/lib" />
 		</Linker>
 		<ExtraCommands>
 			<Add after="cp -v -u -r $(PROJECT_DIR)/../cpp_glfw3_basecode/models $(TARGET_OUTPUT_DIR)" />
@@ -58,32 +59,31 @@
 		<Unit filename="../cpp_glfw3_basecode/include/ShaderProgram.hpp" />
 		<Unit filename="../cpp_glfw3_basecode/include/Utils.hpp" />
 		<Unit filename="../cpp_glfw3_basecode/include/Window.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/GLAD/include/glad/glad.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/GLAD/src/glad.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_glfw.cpp" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_glfw.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_opengl3.cpp" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_opengl3.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/backends/imgui_impl_opengl3_loader.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imconfig.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui.cpp" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_demo.cpp" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_draw.cpp" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_internal.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_tables.cpp" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imgui_widgets.cpp" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imstb_rectpack.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imstb_textedit.h" />
-		<Unit filename="../cpp_glfw3_basecode/libs/imgui/imstb_truetype.h" />
 		<Unit filename="../cpp_glfw3_basecode/src/Camera.cpp" />
 		<Unit filename="../cpp_glfw3_basecode/src/Grid.cpp" />
 		<Unit filename="../cpp_glfw3_basecode/src/Line.cpp" />
 		<Unit filename="../cpp_glfw3_basecode/src/Model.cpp" />
 		<Unit filename="../cpp_glfw3_basecode/src/Point.cpp" />
 		<Unit filename="../cpp_glfw3_basecode/src/Window.cpp" />
+		<Unit filename="../libs/GLAD/include/glad/glad.h" />
+		<Unit filename="../libs/GLAD/src/glad.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../libs/imgui/backends/imgui_impl_glfw.cpp" />
+		<Unit filename="../libs/imgui/backends/imgui_impl_glfw.h" />
+		<Unit filename="../libs/imgui/backends/imgui_impl_opengl3.cpp" />
+		<Unit filename="../libs/imgui/backends/imgui_impl_opengl3.h" />
+		<Unit filename="../libs/imgui/imconfig.h" />
+		<Unit filename="../libs/imgui/imgui.cpp" />
+		<Unit filename="../libs/imgui/imgui.h" />
+		<Unit filename="../libs/imgui/imgui_demo.cpp" />
+		<Unit filename="../libs/imgui/imgui_draw.cpp" />
+		<Unit filename="../libs/imgui/imgui_internal.h" />
+		<Unit filename="../libs/imgui/imgui_tables.cpp" />
+		<Unit filename="../libs/imgui/imgui_widgets.cpp" />
+		<Unit filename="../libs/imgui/imstb_rectpack.h" />
+		<Unit filename="../libs/imgui/imstb_textedit.h" />
+		<Unit filename="../libs/imgui/imstb_truetype.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
