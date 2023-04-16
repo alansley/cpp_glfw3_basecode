@@ -31,6 +31,9 @@ This project is provided under a MIT license (see the top-level LICENSE file), h
 - Run a clean-up sweep through every file in the codebase fixing up any warnings and applying linting/best-practice where appropriate,
 - Modify Point/Line/Quad/TexturedQuad classes to provide both 2D and 3D versions,
 - Create a YouTube video demonstration and link it in this readme,
-- Create additional demo scenes with further functionality (i.e., use the tessalation shaders, scissor testing, geometry shaders, bump / displacement mapping, stochastic sampling etc.),
-- Integrate a better 3D model loader rather than the simple .OBJ file loader I wrote,
+- Create additional demo scenes with further functionality (i.e., screen-space effect shaders, use the tessalation shaders, scissor testing, geometry shaders, bump / displacement mapping, stochastic sampling etc.),
+- Integrate a better 3D model loader rather than the simple .OBJ file loader I wrote, and
 - Create a Code::Blocks project for Windows (the Linux one now exists, but there's no harm in adding a Windows version for those who want something lighter than VS2022).
+
+## MAYBE:
+- Add a Light struct and adjust the ambient/diffuse/specular shaders to use it so you can pass in an array of lights?
