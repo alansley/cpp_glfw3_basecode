@@ -2,9 +2,10 @@
 #define CAMERA_H
 
 #include "GLFW/glfw3.h" // Include GL Framework. Note: This pulls in GL.h for us.
+
 #include "glm/glm.hpp"  // Include GL Mathematics library
 #include "glm/gtx/string_cast.hpp"
-#include <glm/ext/scalar_constants.hpp>
+#include "glm/ext/scalar_constants.hpp"
 
 using glm::vec3;
 
@@ -26,7 +27,7 @@ private:
 
 	// Inline function to convert between degrees and radians
 	// Note: Although we suggest that the compiler should inline the method, it'll make up its own mind about whether this actually occurs.
-	[[nodiscard]] inline float toRads(const float &angleDegs) const {	return angleDegs * DEGS_TO_RADS; }
+	[[nodiscard]] inline float toRads(const float &angleDegs) const { return angleDegs * DEGS_TO_RADS; }
 	[[nodiscard]] inline float toDegs(const float& angleRads) const { return angleRads * RADS_TO_DEGS; }
 
 public:

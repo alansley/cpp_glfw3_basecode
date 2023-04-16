@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(ProjectDir)libs\GLAD\include;$(ProjectDir)libs\GLFW3\include;$(ProjectDir)libs\imgui;$(ProjectDir)include;$(ProjectDir)libs;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\r3dux\Desktop\GLFW3_Framework_2023\GLFW3_Framework_2023\Libs\GLFW3\lib-vc2022;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(ProjectDir)..\libs\GLAD\include;$(ProjectDir)..\libs\windows\GLFW3\include;$(ProjectDir)..\libs\imgui;$(ProjectDir)..\libs;$(ProjectDir)..\cpp_glfw3_basecode\include;$(ProjectDir)..\cpp_glfw3_basecode\demo_scenes;$(IncludePath)</IncludePath>
+    <LibraryPath>$(LibraryPath);$(LibraryPath)\libs\Windows\GLFW3\lib-vc2022;</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -116,13 +116,14 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;$(ProjectDir)Libs\GLFW3\lib-vc2022\glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;$(ProjectDir)..\libs\windows\GLFW3\lib-vc2022\glfw3dll.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy.exe /D /E /Y "$(ProjectDir)models" "$(TargetDir)models\"
-xcopy.exe /D /E /Y "$(ProjectDir)shaders" "$(TargetDir)shaders\"
-xcopy.exe /D /Y "$(ProjectDir)libs\GLFW3\lib-vc2022\glfw3.dll" "$(TargetDir)"</Command>
+      <Command>xcopy.exe /D /E /Y "$(ProjectDir)..\cpp_glfw3_basecode\models" "$(TargetDir)models\"
+xcopy.exe /D /E /Y "$(ProjectDir)..\cpp_glfw3_basecode\shaders" "$(TargetDir)shaders\"
+xcopy.exe /D /E /Y "$(ProjectDir)..\cpp_glfw3_basecode\textures" "$(TargetDir)textures\"
+xcopy.exe /D /Y "$(ProjectDir)..\libs\windows\GLFW3\lib-vc2022\glfw3.dll" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -142,44 +143,44 @@ xcopy.exe /D /Y "$(ProjectDir)libs\GLFW3\lib-vc2022\glfw3.dll" "$(TargetDir)"</C
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Libs\GLAD\src\glad.c" />
-    <ClCompile Include="libs\imgui\backends\imgui_impl_glfw.cpp" />
-    <ClCompile Include="libs\imgui\backends\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="libs\imgui\imgui.cpp" />
-    <ClCompile Include="libs\imgui\imgui_demo.cpp" />
-    <ClCompile Include="libs\imgui\imgui_draw.cpp" />
-    <ClCompile Include="libs\imgui\imgui_tables.cpp" />
-    <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="src\Camera.cpp" />
-    <ClCompile Include="src\Grid.cpp" />
-    <ClCompile Include="src\Line.cpp" />
-    <ClCompile Include="src\Model.cpp" />
-    <ClCompile Include="src\Point.cpp" />
-    <ClCompile Include="src\Window.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\libs\GLAD\src\glad.c" />
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui_demo.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui_draw.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui_tables.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\Main.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Camera.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Grid.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Line.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Model.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Point.cpp" />
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="demo_scenes\DemoSceneGlobals.h" />
-    <ClInclude Include="demo_scenes\ImGuiDemoScene.hpp" />
-    <ClInclude Include="demo_scenes\OpenGLDemoScene.hpp" />
-    <ClInclude Include="include\Camera.h" />
-    <ClInclude Include="include\Grid.h" />
-    <ClInclude Include="include\Line.h" />
-    <ClInclude Include="include\Model.h" />
-    <ClInclude Include="include\Point.h" />
-    <ClInclude Include="include\ShaderProgram.hpp" />
-    <ClInclude Include="include\Utils.hpp" />
-    <ClInclude Include="include\Window.h" />
-    <ClInclude Include="Libs\GLAD\include\glad\glad.h" />
-    <ClInclude Include="libs\imgui\backends\imgui_impl_glfw.h" />
-    <ClInclude Include="libs\imgui\backends\imgui_impl_opengl3.h" />
-    <ClInclude Include="libs\imgui\backends\imgui_impl_opengl3_loader.h" />
-    <ClInclude Include="libs\imgui\imconfig.h" />
-    <ClInclude Include="libs\imgui\imgui.h" />
-    <ClInclude Include="libs\imgui\imgui_internal.h" />
-    <ClInclude Include="libs\imgui\imstb_rectpack.h" />
-    <ClInclude Include="libs\imgui\imstb_textedit.h" />
-    <ClInclude Include="libs\imgui\imstb_truetype.h" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\demo_scenes\DemoSceneGlobals.h" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\demo_scenes\ImGuiDemoScene.hpp" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\demo_scenes\OpenGLDemoScene.hpp" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Camera.h" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Grid.h" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Line.h" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Model.h" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Point.h" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\ShaderProgram.hpp" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Utils.hpp" />
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Window.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\GLAD\include\glad\glad.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_glfw.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_opengl3.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imconfig.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imgui.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imgui_internal.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imstb_rectpack.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imstb_textedit.h" />
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imstb_truetype.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

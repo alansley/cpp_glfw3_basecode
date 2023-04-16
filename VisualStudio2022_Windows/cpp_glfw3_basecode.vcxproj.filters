@@ -15,114 +15,114 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="$(ProjectDir)\..\libs\GLAD\src\glad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Libs\GLAD\src\glad.c">
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_glfw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Camera.cpp">
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_opengl3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Window.cpp">
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Grid.cpp">
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui_demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Line.cpp">
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui_draw.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Model.cpp">
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui_tables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Point.cpp">
+    <ClCompile Include="$(ProjectDir)\..\libs\imgui\imgui_widgets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="libs\imgui\imgui.cpp">
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="libs\imgui\imgui_draw.cpp">
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="libs\imgui\imgui_tables.cpp">
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Grid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="libs\imgui\imgui_widgets.cpp">
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Line.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="libs\imgui\backends\imgui_impl_glfw.cpp">
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Model.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="libs\imgui\backends\imgui_impl_opengl3.cpp">
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Point.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="libs\imgui\imgui_demo.cpp">
+    <ClCompile Include="$(ProjectDir)\..\cpp_glfw3_basecode\src\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Libs\GLAD\include\glad\glad.h">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\demo_scenes\DemoSceneGlobals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Camera.h">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\demo_scenes\ImGuiDemoScene.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Window.h">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\demo_scenes\OpenGLDemoScene.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Utils.hpp">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Camera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Grid.h">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Grid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Line.h">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Line.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Model.h">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Model.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Point.h">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Point.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\ShaderProgram.hpp">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\ShaderProgram.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs\imgui\imgui.h">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs\imgui\imconfig.h">
+    <ClInclude Include="$(ProjectDir)\..\cpp_glfw3_basecode\include\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs\imgui\imgui_internal.h">
+    <ClInclude Include="$(ProjectDir)\..\libs\GLAD\include\glad\glad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs\imgui\imstb_rectpack.h">
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_glfw.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs\imgui\imstb_textedit.h">
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_opengl3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs\imgui\imstb_truetype.h">
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\backends\imgui_impl_opengl3_loader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs\imgui\backends\imgui_impl_glfw.h">
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imconfig.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs\imgui\backends\imgui_impl_opengl3.h">
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imgui.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="libs\imgui\backends\imgui_impl_opengl3_loader.h">
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imgui_internal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="demo_scenes\ImGuiDemoScene.hpp">
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imstb_rectpack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="demo_scenes\OpenGLDemoScene.hpp">
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imstb_textedit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="demo_scenes\DemoSceneGlobals.h">
+    <ClInclude Include="$(ProjectDir)\..\libs\imgui\imstb_truetype.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
