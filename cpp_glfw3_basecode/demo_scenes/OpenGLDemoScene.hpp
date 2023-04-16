@@ -286,10 +286,10 @@ private:
 		        ImGui::Text(fpsString.c_str());
 		        ImGui::Text(camRotDegsString.c_str());
 		        ImGui::Text(camRotRadsString.c_str());
-		        ImGui::Text(sinXRotRads.c_str());
-		        ImGui::Text(cosXRotRads.c_str());
-		        ImGui::Text(sinYRotRads.c_str());
-		        ImGui::Text(cosYRotRads.c_str());
+		        //ImGui::Text(sinXRotRads.c_str());
+		        //ImGui::Text(cosXRotRads.c_str());
+		        //ImGui::Text(sinYRotRads.c_str());
+		        //ImGui::Text(cosYRotRads.c_str());
 			ImGui::SeparatorText("Sliders");
 		        ImGui::SliderFloat("X Rot Speed", &modelRotationSpeed.x, -5.0f, 5.0f);
 		        ImGui::SliderFloat("Y Rot Speed", &modelRotationSpeed.y, -5.0f, 5.0f);
