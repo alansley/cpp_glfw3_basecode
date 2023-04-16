@@ -2,9 +2,10 @@
 VisualStudio2022_Windows/.vs
 VisualStudio2022_Windows/x64
 
-# Ignore Code::Blocks build folders
+# Ignore Code::Blocks build folders and `.save` backup files
 CodeBlocks_Linux/bin
 CodeBlocks_Linux/obj
+*.save
 
 # Prerequisites
 *.d
