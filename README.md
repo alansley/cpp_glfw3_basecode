@@ -1,5 +1,5 @@
 # C++ GLFW3 Basecode
-Cross-platform C++ GLFW3 Basecode with [GLAD](https://glad.dav1d.de/), [GLM](https://github.com/g-truc/glm), [STB](https://github.com/nothings/stb), and [Dear ImGui](https://github.com/ocornut/imgui) pre-integrated for rapid OpenGL experimentation.
+Cross-platform C++ GLFW3 Basecode with [GLAD](https://glad.dav1d.de/), [GLM](https://github.com/g-truc/glm), [STB](https://github.com/nothings/stb), and [Dear ImGui](https://github.com/ocornut/imgui) pre-integrated for rapid OpenGL prototyping and experimentation.
 
 [Main](https://github.com/alansley/cpp_glfw3_basecode/blob/main/cpp_glfw3_basecode/Main.cpp) is kept as small as possible so you can add as much code there as you want if you're just experimenting/prototyping, or alternatively you might want to add code to a [demo](https://github.com/alansley/cpp_glfw3_basecode/blob/main/cpp_glfw3_basecode/demo_scenes/OpenGLDemoScene.hpp) [scene](https://github.com/alansley/cpp_glfw3_basecode/blob/main/cpp_glfw3_basecode/demo_scenes/ImGuiDemoScene.hpp) type class as a quick and easy way to separate out your new functionality.
 
