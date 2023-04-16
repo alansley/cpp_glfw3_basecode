@@ -3,7 +3,7 @@ C++ GLFW3 Basecode by Al Lansley, 2023.
 https://github.com/alansley/cpp_glfw3_basecode
 
 This project is MIT licensed, see LICENSE for details.
-The integrated libraries GLFW3, GLM, STB, and IMGUI have their own separate licenses. See the relevant libs folder(s) for details.
+The integrated libraries GLFW3, GLM, STB, and ImGui have their own separate licenses. See the relevant libs folder(s) for details.
 ***/
 
 #include <iostream>
