@@ -1,6 +1,8 @@
 # cpp_glfw3_basecode
 Cross-platform C++ GLFW3 Basecode with [GLAD](https://glad.dav1d.de/), [GLM](https://github.com/g-truc/glm), [STB](https://github.com/nothings/stb), and [Dear ImGui](https://github.com/ocornut/imgui) pre-integrated for rapid OpenGL experimentation.
 
+![Screenshot of cpp_glf3_basecode](https://github.com/alansley/cpp_glfw3_basecode/blob/main/Screenshot_2023-04-16.png?raw=true)
+
 In terms of custom functionality, there is also:
 - A `Window` class with a mouse/keyboard and window event handlers and a custom 3D camera to look and move around,
 - A `ShaderProgram` class to easily load & combine vertex/fragment shaders as well as tesselation shaders,
