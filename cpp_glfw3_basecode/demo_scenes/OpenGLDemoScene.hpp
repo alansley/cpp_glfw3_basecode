@@ -32,10 +32,8 @@ private:
     GLint texture1SamplerID, texture2SamplerID;	// Note: If you want to use separate sampling units for each texture
     float quadSize = 50.0f;
     float texQuadVertices[20]; // 3 vertex positions + 2 texture coordinates = 5 floats. 4 verts per quad = 20 floats in total.
-
-    // Pointers to two grids we draw by default just so we can see something is happening and display orientation when moving w/ the mouse & keys
-    //Grid upperGrid, lowerGrid;
-    // Instantiate our grids. Params: width, depth, level (i.e. location on Y-axis), number of grid lines
+    
+    // Instantiate our grids (used to see our orientation). Params: width, depth, level (i.e. location on Y-axis), number of grid lines
     Grid* upperGrid = new Grid(500.0f, 500.0f,  50.0f, 20);
     Grid* lowerGrid = new Grid(500.0f, 500.0f, -50.0f, 20);
 
@@ -63,7 +61,7 @@ private:
         modelShaderProgram->bindUniform("projectionMatrix");
         modelShaderProgram->bindUniform("normalMatrix");
 
-        //modelShaderProgram->bindUniform("time");        // Number of seconds since starting (used for randomness within shaders)
+        //modelShaderProgram->bindUniform("time"); // Number of seconds since starting (can be used for randomness within shaders but not currently used)
 
         // Working in 3D so we have x/y/z components for the vertex position (we also use the same value for the number of normal components to use)
         constexpr int VERTEX_COMPONENTS = 3;
@@ -125,7 +123,7 @@ private:
         glUniformMatrix4fv(modelShaderProgram->uniform("viewMatrix"), 1, GL_FALSE, glm::value_ptr(Window::getViewMatrix()));
         glUniformMatrix4fv(modelShaderProgram->uniform("projectionMatrix"), 1, GL_FALSE, glm::value_ptr(Window::getProjectionMatrix()));
 
-        //glUniform1f(modelShaderProgram->uniform("time"), (GLfloat)glfwGetTime());
+        //glUniform1f(modelShaderProgram->uniform("time"), (GLfloat)glfwGetTime()); // Provide the current time to the shader (not currently used)
 
         // Calculate the normal matrix as the inverse transpose of a 3x3 of the Model matrix and provide it
         normalMatrix = glm::transpose(glm::inverse(mat3(modelMMatrix)));
@@ -211,13 +209,11 @@ private:
         texQuadModelMatrix = glm::translate(texQuadModelMatrix, corner);
         texQuadModelMatrix = glm::rotate(texQuadModelMatrix, -(GLfloat)glfwGetTime() * 2.0f, Utils::Y_AXIS);
 
-        // Work out the normal of the quad
+        // Work out whether the textured quad is currently facing along the positive Z-axis or not
         vec3 modelRight = texQuadModelMatrix * vec4(Utils::X_AXIS, 0.0f);
         vec3 modelUp = texQuadModelMatrix * vec4(Utils::Y_AXIS, 0.0f);
         vec3 normal = glm::normalize(glm::cross(vec3(modelRight), vec3(modelUp)));
-        //cout << glm::to_string(normal) << endl;
         float dotProduct = glm::dot(normal, Utils::Z_AXIS);
-        //cout << dotProduct << endl;
 
         // Get the location of the "textureMap" uniform. Note: Don't use texQuadShaderProgram->uniform("textureMap") for this! We need it as an int!
         GLint textureMapLocation = glGetUniformLocation(texQuadShaderProgram->getProgramID(), "textureMap");
