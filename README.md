@@ -22,7 +22,7 @@ or
 - For **Linux**: Open the `CodeBlocks_Linux/cpp_glfw3_basecode.cbp` file.
 
 ## License
-This project is provided under a MIT license (see the top-level LICENSE file), however the integrated libraries have their own licenses - see the `cpp_glfw3_basecode/libs` folder and its contained library subfolders for further details.
+This project is provided under a MIT license (see the top-level LICENSE file), however the integrated libraries have their own licenses - see the `libs` folder and its contained library subfolders for further details.
 
 ## TODO:
 - Run a clean-up sweep through every file in the codebase fixing up any warnings and applying linting/best-practice where appropriate,
