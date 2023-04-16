@@ -111,7 +111,7 @@ private:
         modelMMatrix = glm::rotate(modelMMatrix, currentTime * modelRotationSpeed.y, Utils::Y_AXIS);
         modelMMatrix = glm::rotate(modelMMatrix, currentTime * modelRotationSpeed.x, Utils::X_AXIS);
 
-        // Provide the model. view, and projection matrix
+        // Provide the model. view, and projection matrices
         glUniformMatrix4fv(modelShaderProgram->uniform("modelMatrix"), 1, GL_FALSE, glm::value_ptr(modelMMatrix));
         glUniformMatrix4fv(modelShaderProgram->uniform("viewMatrix"), 1, GL_FALSE, glm::value_ptr(Window::getViewMatrix()));
         glUniformMatrix4fv(modelShaderProgram->uniform("projectionMatrix"), 1, GL_FALSE, glm::value_ptr(Window::getProjectionMatrix()));
@@ -265,13 +265,13 @@ private:
         ImGui::SetNextWindowPos(ImVec2(20, 20));
         ImGui::SetNextWindowSize(ImVec2(380, 325));
         ImGui::Begin("Details / Settings");
-			ImGui::SeparatorText("Controls");
-				ImGui::Text("Use WSAD(Q/E) to move the camera & hold the RMB");
+		ImGui::SeparatorText("Controls");
+			ImGui::Text("Use WSAD(Q/E) to move the camera & hold the RMB");
                 ImGui::Text("and move the mouse to look around. The mouse wheel");
                 ImGui::Text("adjusts FoV while the 'F' key toggles Hor+/Vert-");
                 ImGui::Text("field of view modes.");				
     		ImGui::SeparatorText("Details");
-				ImGui::Text(fpsString.c_str());
+			ImGui::Text(fpsString.c_str());
 		        ImGui::Text(horizFoVString.c_str());
                 ImGui::Text(foVModeString.c_str());
 		        ImGui::Text(camRotDegsString.c_str());
