@@ -122,7 +122,7 @@ Line::Line()
 
 
 // Three parameter constructor
-Line::Line(vec3 p1Loc, vec3 p2Loc, vec4 col, float lw = 1.0f) : p1Location(p1Loc), p2Location(p2Loc), colour(col), lineWidth(lw)
+Line::Line(vec3 p1Loc, vec3 p2Loc, vec4 col, float width = 1.0f) : p1Location(p1Loc), p2Location(p2Loc), colour(col), lineWidth(width)
 {
     // Initialisation / assignment of location, colour and line width happen in the above initialisation list
 
@@ -177,10 +177,7 @@ void Line::setColour(float r, float g, float b, float a)
     colour.a = a;
 }
 
-void Line::setlineWidth(float lw)
-{
-    lineWidth = lw;
-}
+void Line::setlineWidth(float width) { lineWidth = width; }
 
 // Method to draw the line - takes a combined Model/View/Projection matrix
 // to pass to the shader as a uniform.
